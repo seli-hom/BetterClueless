@@ -46,35 +46,6 @@ function logOnConsole(){
     console.log("Button clicked!");
 }
 
-//    //part of option2
-//     function handleShowCarsClick(){
-//         displayAllCars(cars);
-//     } 
-// }
-
-
-// function displayAllCars(cars){
-//     let carsList  = "<ol>";
-//     console.log('Displaying Excuses')
-//     cars.forEach(car => {
-//         carsList += `<li> ${car.displayInfo()} </li>`;
-//     });
-//     carsList += "</ol>";
-
-//     const carsPlaceHolder = document.getElementById("car-list");
-//     carsPlaceHolder.innerHTML = carsList
-// }
-
-// function displayChoices(){
-//     let excuseList  = "<ol>";
-//     excuseList += `<button> High stakes, I need your help!! </button>`;
-//     excuseList += `<button> Medium stakes, lets not send anyone to the hospital but its serious enough </button>`;
-//     excuseList += `<button> Low stakes, put some humor into it </button>`;
-//     excuseList += "</ol>";
-
-//     const excusesPlaceHolder = document.getElementById("excuses-list");
-//     excusesPlaceHolder.innerHTML = carsList
-// }
 
 function generateExcuse(){
     let chosenDegree = document.getElementsByName("level").value;
