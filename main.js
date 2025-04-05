@@ -24,34 +24,28 @@ class Excuse{
     }
 
 }
-function createCars(cars){
-    const honda = new Car("Honda", 'Civic', 2018, 29.99, 'Blue');
-    const toyota = new Car("Toyota", 'Camri', 2017, 79.99, 'Red', true);
-    const subaru = new Car("Subaru", 'SUV', 2017, 79.99, 'Red');
 
-    
-    cars.push(honda);
-    cars.push(toyota);
-    cars.push(subaru)
-}
 
 function initAPP(){
     //1 Initialization steps: attach eventHandlers to the buttons.
     console.log("Initializing the App...");
     //2 create the car array and populate it with at least 5 cars
-    const cars =[];
-    createCars(cars);
-    console.log(cars)
+   
 
     //3 Add/Attach eventHandlers to the buttons
     const btnGenerateExcuse = document.getElementById("btn-generate-excuse");
     const btnExtremeExcuse = document.getElementById("btn-extreme-excuse");
 
-    btnGenerateExcuse.addEventListener("click",generateExcuse());
+    btnGenerateExcuse.addEventListener("click",logOnConsole());
     btnExtremeExcuse.addEventListener("click",()=>{displayExtremeMessUp()});/*another option is to create another parameterless function to be put  instead of using callBack function*/
 
 
 }
+
+function logOnConsole(){
+    console.log("Button clicked!");
+}
+
 //    //part of option2
 //     function handleShowCarsClick(){
 //         displayAllCars(cars);
@@ -97,44 +91,60 @@ function generateExcuse(){
 
 function displayExtremeMessUp(){ 
     let excuseNeeded  = "<ol>";
-    console.log('Why would you do this??! We got you covered!')
-   excuseNeeded += `<p> High stakes, don't worry we cot you covered! </p>`;
+    console.log('Why would you do that?! You are lucky to have Better Clueless!')
+   excuseNeeded += `<p> Why would you do this??! You are lucky to have Better Clueless! </p>`;
     excuseNeeded += `//generated excuse`;
     excuseNeeded += "</ol>";
 
-    const carsPlaceHolder = document.getElementById("excuses-list");
-    carsPlaceHolder.innerHTML = excuseNeeded
+    const excusesPlaceHolder = document.getElementById("excuses-list");
+    excusesPlaceHolder.innerHTML = excuseNeeded
 }
 
 function displayHighExcuse(){ 
     let excuseNeeded  = "<ol>";
-    console.log('You need help! We got you covered!')
-   excuseNeeded += `<p> High stakes, don't worry we cot you covered! </p>`;
-    excuseNeeded += `//generated excuse`;
+    console.log('You need help! We got you covered!');
+    excuseNeeded += `<p> How could you??! You,re in good hands with Better Clueless! </p>`;
+
+    const excuse = new Excuse("//generated excuse");
+    excuseNeeded += `<p>${excuse}</p>`;
+
     excuseNeeded += "</ol>";
 
-    const carsPlaceHolder = document.getElementById("excuses-list");
-    carsPlaceHolder.innerHTML = excuseNeeded
+    const excusesPlaceHolder = document.getElementById("excuses-list");
+    excusesPlaceHolder.innerHTML = excuseNeeded
 }
 
 function displayMediumExcuse(){ 
     let excuseNeeded  = "<ol>";
-    console.log('You need help! We got you covered!')
-   excuseNeeded += `<p> High stakes, don't worry we cot you covered! </p>`;
-    excuseNeeded += `//generated excuse`;
+    console.log('Wow! it seems like you are in a bit of a pickle! Better Clueless to the rescue!');
+    excuseNeeded += `<p> Wow! it seems like you are in a bit of a pickle! Better Clueless to the rescue </p>`;
+
+
+    const excuse = new Excuse("//generated excuse");
+    excuseNeeded += `<p>${excuse}</p>`;
+
+
+
     excuseNeeded += "</ol>";
 
-    const carsPlaceHolder = document.getElementById("excuses-list");
-    carsPlaceHolder.innerHTML = excuseNeeded
+    const excusesPlaceHolder = document.getElementById("excuses-list");
+    excusesPlaceHolder.innerHTML = excuseNeeded
 }
 
 function displayLowExcuse(){ 
     let excuseNeeded  = "<ol>";
-    console.log('You need help! We got you covered!')
-   excuseNeeded += `<p> High stakes, don't worry we cot you covered! </p>`;
-    excuseNeeded += `//generated excuse`;
+    console.log('Does this even matter? Better not risk it though... Better Clueless will handle it😉')
+    excuseNeeded += `<p> Does this even matter? Better not risk it though... Better Clueless will handle it😉 </p>`;
+   
+
+    const excuse = new Excuse("//generated excuse");
+    excuseNeeded += `<p>${excuse}</p>`;
+
+
+
     excuseNeeded += "</ol>";
 
-    const carsPlaceHolder = document.getElementById("excuses-list");
-    carsPlaceHolder.innerHTML = excuseNeeded
+    const excusesPlaceHolder = document.getElementById("excuses-list");
+    excusesPlaceHolder.innerHTML = excuseNeeded
 }
+
