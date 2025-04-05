@@ -4,6 +4,7 @@ const {GoogleGenerativeAI} = require("@google/generative-ai");
 const app = express();
 
 const bob = process.env.BOB
+console.log(bob);
 
 app.use(express.static(__dirname + '/public'));
 
@@ -19,10 +20,10 @@ app.get("/api/excuse", async (req, res) =>{
     const model = genAI.getGenerativeModel({model : "gemini-2.0-flash"});
     const question = prompt.prompt;
     const result = await model.generateContent(question);
-    const response = await result.response.candidates[0]["content"]["parts"][0]["text"]
+    const response = await result.response.candidates[0]["content"]["parts"][0]["text"];
     res.status(200).json({response});
   } catch (error) {
-    console.log("popop")
+    console.log("popop" + error)
   }
   
 });
