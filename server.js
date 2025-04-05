@@ -5,6 +5,13 @@ const app = express();
 
 const bob = process.env.BOB
 
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', (req, res) => {
+
+  res.sendFile(__dirname + '/public/index.html');
+});
+
 app.get("/api/excuse", async (req, res) =>{
   try {
     const prompt = req.query;

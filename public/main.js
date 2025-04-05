@@ -61,39 +61,40 @@ function getPromptText(){
 }
 function getExtremePromptText(){
     extremePrompt = getPromptText();
-    extremePrompt += ', this is an extreme situation and i need a really good excuse!';
+    extremePrompt += ', this is an extreme situation and i need a really good excuse!, Keep in mind i want a paragraph of no more than 5 lines this is and urgent situation so make it believable';
     return extremePrompt;
 
 }
 
 function getHighPromptText(){
     highPrompt = getPromptText();
-    highPrompt += ', its high stakes i need a really good excuse!';
+    highPrompt += ', its high stakes i need a really good excuse! while the stakes are high and it has to be a blievable excuse please keep it under 3 sentences maximum';
     return highPrompt;
 }
 function getMediumPromptText(){
     mediumPrompt = getPromptText();
-    mediumPrompt += ', my situation is not that bad but i still need a good excuse to not get in trouble!';
+    mediumPrompt += ', my situation is not that bad but i still need a good excuse to not get in trouble! Do not go over 2 sentences';
     return mediumPrompt; 
 }
 function getLowPromptText(){
     lowPrompt = getPromptText();
-    lowPrompt += ', its not that deep, so make a really surface level excuse!';
+    lowPrompt += ', its not that deep, so make a really surface level excuse! Try to keep at a best of 1 sentence';
     return lowPrompt; 
 }
 
 function generateExcuse(){
-    let bob;
-    let level = document.getElementsByName("level").value;
-    if(level == "high"){
+    let bob = "";
+    const level = document.querySelector('input[name="level"]:checked').id;
+    if(level == "high-level"){
          bob = getHighPromptText()
     }
-    else if(chosenDegree == "medium"){
+    else if(level == "medium-level"){
         bob = getMediumPromptText()
     }
-    else if(chosenDegree == "low"){
+    else if(level == "low-level"){
         bob = getLowPromptText()
     }
+    bob = bob + "no more questions asked, just give me the excuse"
     generateExcuseApi(bob)
 }
 
@@ -115,7 +116,7 @@ async function generateExcuseApi(prompt) {
         }
 
         const data = await response.json();
-        const excuse = data.choices[0].message.content;
+        const excuse = data.response;
 
         document.getElementById('excuses-list').innerText = excuse;
     } catch (error) {
@@ -127,7 +128,8 @@ async function generateExcuseApi(prompt) {
 
 
 function generateExtreme(){
-    let bobExtreme = displayExtremeMessUp();
+    
+    const bobExtreme = getExtremePromptText();
     generateExcuseApi(bobExtreme);
 }
 
