@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BetterClueless.co</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <div  id="container" class="container-fluid bg-light-subtle" width="100%">
+        <h1 id="title" class="mt-5 text-center "> <img src="./images/BetterCluelessLogo.jpg" alt="Better-Clueless-logo" width="150" height="150">  <br> Better Clueless! </h1>
+        <p id="sub-title" class="fs-2 text-primary-emphasis "> Not everyone needs to know about your shortcomings, better leave them clueless.</p> 
+        <br>
+        
+        <p id="description" class="fs-5 text-secondary">Better Clueless is here to give you a perfect excuse for those hard times where you might risk your relationship, friendships, or even job!!!.</p>
+        <hr class="my-4">
+        <div id="excuses-list" class="container mt-5 mb-5 text-primarys">
+          <h2 class="text-center">Excuses</h2>
+          <div id="excuses" class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Excuses will be generated here -->
+          </div>
+
+        </div>
+        <input type="text" name="mess-up" id="prompt-text-box" class="form-control mt-5 mb-5" placeholder="Enter your mess up here..."  required>
+
+        <div id="degree-needed" class=" mt-5 mb-5 justify-content-center">
+          <input type="radio" name="level" id="high-level" checked required>
+          <label for="-high-level">😫: I need help!</label>
+          <br>
+
+          <input type="radio" name="level" id="medium-level">
+          <label for="-medium-level">😞: I swear it wasn't on purpose</label>
+         
+          <br>
+          <input type="radio" name="level" id="low-level">
+          <label for="-low-level">😒: It would just look better on me</label>
+          
+        </div>
+        
+
+        <div id="buttons" class="mb-5 alighn-items-center text-center">
+
+          <button id="btn-generate-excuse" class="btn btn-primary btn-lg m-2 pr-5" href="#" role="button"> Generate Excuse</button>
+          <button id="btn-extreme-excuse" class="btn btn-danger btn-lg " href="#" role="button"> !Extreme Help!</button>
+          
+
+          <div id="footer">
+            
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <div id="footer" class="bg-dark-subtle p-5 mt-5 text-center"> &copy; Leonella Levy Martel and Selihom Efrem Ogbe</div>
+        
+    
+    </div>
+   
+
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
